@@ -1,6 +1,6 @@
 """
 
-For some stupid reason, the Epic Games version of Hitman III
+For some stupid reason, the Epic Games version of Hitman 3
 only launches when PipelineCache.bin and PipelineLibrary.bin
 are deleted from the AppData folder. 
 
@@ -26,35 +26,35 @@ def getDirsFromConfigFile():
 
 # Exit script if directories are not set
 def abortIfNoDirs(message=None):
-    if len(hitman_stupid_files_dir) == 0 or len(hitman_launcher_dir) == 0:
+    if len(hitman_stupid_files_dir) == 0 or len(hitman_exe_dir) == 0:
         print(message)
         exit()
 
 
-config_filepath = os.curdir + '\\' + "HitmanIIIFix.conf"
+config_filepath = os.curdir + '\\' + "Hitman3Fix.conf"
 
 hitman_stupid_files_dir = str()
-hitman_launcher_dir     = str()
+hitman_exe_dir     = str()
 
 # Did the user supply the folders as arguments?
 user_supplied_folders = len(sys.argv) == 3
 
 if user_supplied_folders:
     hitman_stupid_files_dir = sys.argv[1]
-    hitman_launcher_dir = sys.argv[2]
+    hitman_exe_dir = sys.argv[2]
 
 # Write to or read from config file
 if not os.path.exists(config_filepath) or user_supplied_folders:
 
     # Create config file
     config_file = open(config_filepath, 'w')
-    config_file.write('hitman_stupid_files_dir={0}\nhitman_launcher_dir={1}'.format(hitman_stupid_files_dir, hitman_launcher_dir))
+    config_file.write('hitman_stupid_files_dir={0}\nhitman_exe_dir={1}'.format(hitman_stupid_files_dir, hitman_exe_dir))
     config_file.close()
 
     abortIfNoDirs('Folder paths not set in config file, or supplied as arguments')
 
 else:
-    hitman_stupid_files_dir, hitman_launcher_dir = getDirsFromConfigFile()
+    hitman_stupid_files_dir, hitman_exe_dir = getDirsFromConfigFile()
 
     abortIfNoDirs('Folder paths not set! Aborting...')
 
@@ -65,5 +65,5 @@ for file in os.listdir(hitman_stupid_files_dir):
 
 
 # Launch game
-game_dir = '\"' + hitman_launcher_dir + '\\' + 'Launcher.exe' + '\"'
+game_dir = '\"' + hitman_exe_dir + '\\' + 'HITMAN3.exe' + '\"'
 os.system(game_dir)
