@@ -5,7 +5,7 @@
 For some reason, on some systems, Hitman III will not boot on Windows past the launcher when its AppData 
 directory has files in it. This script empties that directory and then launches the Hitman III launcher.
 
-** THIS ONLY WORKS ON WINDOWS **
+**THIS ONLY WORKS ON WINDOWS**
 
 ## Requirements
 - Python 3
