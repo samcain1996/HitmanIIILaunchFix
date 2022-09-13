@@ -2,7 +2,7 @@
 
 ## Description
 
-For some reason, on some systems, Hitman 3 will not boot on Windows past the executable when its AppData 
+For some reason, on some systems, Hitman 3 will not boot on Windows past the launcher when its AppData 
 directory has files in it. This script empties that directory and then launches the Hitman 3 executable.
 
 ## How to Fix Manually
