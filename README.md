@@ -1,4 +1,4 @@
-# HitmanIIILaunchFix
+# Hitman III Fix And Launch Game
 
 ## Description
 
