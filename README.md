@@ -1,4 +1,4 @@
-# Hitman 3 Fix And Launch Game **Windows Only**
+# Hitman 3 Fix And Launch Game (Windows Only)
 
 ## Description
 
