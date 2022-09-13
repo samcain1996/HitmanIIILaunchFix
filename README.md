@@ -1,4 +1,4 @@
-# Hitman 3 Fix And Launch Game
+# Hitman 3 Fix And Launch Game **( THIS ONLY WORKS ON WINDOWS )**
 
 ## Description
 
@@ -8,8 +8,6 @@ directory has files in it. This script empties that directory and then launches 
 ## How to Fix Manually
 
 Before launching the game, navigate to Hitman 3's AppData folder and delete everything in it.
-
-**THIS ONLY WORKS ON WINDOWS**
 
 ## Requirements
 - Python 3
