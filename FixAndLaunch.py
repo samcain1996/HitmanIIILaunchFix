@@ -25,7 +25,7 @@ def getDirsFromConfigFile():
     return config_vars
 
 # Exit script if directories are not set
-def abortIfNoDirs(message=None):
+def abort(message=None):
     if len(hitman_stupid_files_dir) == 0 or len(hitman_exe_dir) == 0:
         print(message)
         exit()
@@ -44,25 +44,24 @@ if user_supplied_folders:
     hitman_exe_dir = sys.argv[2]
 
 # Write to or read from config file
-if not os.path.exists(config_filepath) or user_supplied_folders:
+if ( not os.path.exists(config_filepath) ) or user_supplied_folders:
 
     # Create config file
     config_file = open(config_filepath, 'w')
     config_file.write('hitman_stupid_files_dir={0}\nhitman_exe_dir={1}'.format(hitman_stupid_files_dir, hitman_exe_dir))
     config_file.close()
 
-    abortIfNoDirs('Folder paths not set in config file, or supplied as arguments')
+    abort('Folder paths not set in config file or supplied as arguments!')
 
 else:
     hitman_stupid_files_dir, hitman_exe_dir = getDirsFromConfigFile()
 
-    abortIfNoDirs('Folder paths not set! Aborting...')
+    abort('Folder paths not set! Aborting...')
 
 
 # Remove files to allow game to launch
 for file in os.listdir(hitman_stupid_files_dir):
     os.remove(hitman_stupid_files_dir + '\\' + file)
-
 
 # Launch game
 game_dir = '\"' + hitman_exe_dir + '\\' + 'HITMAN3.exe' + '\"'

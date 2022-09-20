@@ -5,13 +5,15 @@
 For some reason, on some systems, Hitman 3 will not boot on Windows past the executable when its AppData 
 directory has files in it. This script empties that directory and then launches the Hitman 3 executable.
 
-**THIS ONLY WORKS ON WINDOWS**
-
 ## Requirements
 - Python 3
 - Hitman 3
 
 ## How to Use
+
+---- WARNING ----
+If game was purchased through the Epic Games Store, make sure that Epic Games Launcher is running.
+
 
 1. Download FixAndLaunch.py
 
